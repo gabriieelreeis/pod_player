@@ -15,7 +15,10 @@ dependencies:
   # services
   video_player: ^2.4.5
   http: ^0.13.4
-  get: ^5.0.0-release-candidate-3
+  get:
+    git:
+      url: https://github.com/jonataslaw/getx.git
+      ref: 7479982b2eb137352a2ea4d3491686eae718d28b
   wakelock: ^0.6.1+2
   universal_html: ^2.0.8
   youtube_explode_dart: ^1.11.0
