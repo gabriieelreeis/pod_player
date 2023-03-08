@@ -18,8 +18,8 @@ class VideoApis {
       String? hash;
 
       if (videoId.contains('/')) {
-        final id = videoId.split('/')[0];
-        hash = videoId.split('/')[1];
+        final id = videoId.split('/')[1];
+        hash = videoId.split('/')[2];
         videoId = id;
       }
 
