@@ -15,8 +15,19 @@ class VideoApis {
     String videoId,
   ) async {
     try {
+      String? hash;
+
+      if (videoId.contains('/')) {
+        final id = videoId.split('/')[0];
+        hash = videoId.split('/')[1];
+        videoId = id;
+      }
+
+      final String url =
+          'https://player.vimeo.com/video/$videoId/config${hash != null ? '?h=$hash' : ''}';
+
       final response = await http.get(
-        Uri.parse('https://player.vimeo.com/video/$videoId/config'),
+        Uri.parse(url),
       );
       final jsonData =
           jsonDecode(response.body)['request']['files']['progressive'];
